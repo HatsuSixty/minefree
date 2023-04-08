@@ -32,7 +32,7 @@ void exitprg(int c) {
 }
 
 int main(int argc, const char** argv) {
-    const char* removedfile = "C:\\Windows\\System32\\Windows.ApplicationModel.Store.dll";
+    const char* removedfile = NULL;
 
     if (argc > 1) {
         if (strcmp(argv[1], "--help") == 0) {
@@ -44,6 +44,8 @@ int main(int argc, const char** argv) {
         } else {
             removedfile = argv[1];
         }
+    } else {
+        removedfile = "C:\\Windows\\System32\\Windows.ApplicationModel.Store.dll";
     }
 
     if (access(removedfile, F_OK) != 0) {
@@ -51,7 +53,7 @@ int main(int argc, const char** argv) {
         exitprg(1);
     }
 
-    const char* downloaded_file = basename((char*) removedfile);
+    const char* downloaded_file = "Windows.ApplicationModel.Store.dll";
 
     if (URLDownloadToFile(NULL,
                           "https://archive.org/download/freeminecraftbedrock/Windows.ApplicationModel.Store.dll",
