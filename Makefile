@@ -10,6 +10,6 @@ main.obj: main.c
 	$(CC) $(CFLAGS) -c main.c -o main.obj $(LIBS)
 
 res.obj: minefree.rc
-	$(CCRES) minefree.rc res.obj $(LIBS)
+	$(CCRES) minefree.rc res.obj
 
 minefree.rc: minefree.exe.manifest
