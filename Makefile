@@ -1,7 +1,7 @@
 CC=x86_64-w64-mingw32-gcc
 CCRES=x86_64-w64-mingw32-windres
 CFLAGS=-Wall -Wextra -std=c11 -pedantic -ggdb
-LIBS=-L. -lurlmon
+LIBS=-lurlmon
 
 minefree.exe: main.obj res.obj
 	$(CC) $(CFLAGS) -o minefree.exe main.obj res.obj $(LIBS)
